@@ -6,35 +6,27 @@ class TestFizzBuzz(unittest.TestCase):
     
     def test_it_return_fizz_for_multiples_of_three(self) -> None:
         
-        fizzbuzz = FizzBuzz()
-        
         for number in [3,6,9,12]:
             
-            self.assertEqual('fizz',fizzbuzz.convert(number))
+            self.assertEqual('fizz',FizzBuzz.convert(number))
             
     def test_it_return_buzz_for_multiples_of_five(self) -> None:
-        
-        fizzbuzz = FizzBuzz()
-        
+  
         for number in [5,10,20,25]:
-            
-            self.assertEqual('buzz',fizzbuzz.convert(number))
+      
+            self.assertEqual('buzz',FizzBuzz.convert(number))
     
     def test_it_return_fizzbuzz_for_multiples_of_three_and_five(self) -> None:
-        
-        fizzbuzz = FizzBuzz()
-        
+  
         for number in [15,30,45,60]:
-            
-            self.assertEqual('fizzbuzz',fizzbuzz.convert(number))
+      
+            self.assertEqual('fizzbuzz',FizzBuzz.convert(number))
             
     def test_it_return_the_number_if_not_divisible_by_three_or_five(self) -> None:
-      
-      fizzbuzz = FizzBuzz()
-      
+
       for number in [1,2,4,7,8,11]:
-          
-          self.assertEqual(number,fizzbuzz.convert(number))  
+    
+          self.assertEqual(number,FizzBuzz.convert(number))  
         
 if __name__ == "__main__":
     

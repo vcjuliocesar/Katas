@@ -1,6 +1,7 @@
 class FizzBuzz:
     
-    def convert(self,number:int):
+    @staticmethod
+    def convert(number:int):
         
         result = ''
         
