@@ -2,10 +2,19 @@
 
 ### Run tests
 
- - Run all tests
+ - **Run all tests**
 	
-    `python -m unittest discover tests`
+    ```sh
+    python -m unittest discover tests
+    ```
  
- - Run spesific test
+ - **Run specific test**
     
-    `python -m unittest tests/test_example_name.py`
+    ```sh
+    python -m unittest tests/test_example_name.py
+    ```
+
+# Kotlin
+
+### Run tests
+``WIP``
