@@ -2,7 +2,15 @@ import unittest
 
 from core.fizz_buzz import FizzBuzz
 
+from exceptions.value_not_number_error import ValueNotNumberError
+
 class TestFizzBuzz(unittest.TestCase):
+    
+    def test_it_return_an_exception_if_the_parameter_is_not_a_number(self) -> None:
+         
+        with self.assertRaises(ValueNotNumberError):
+            
+            FizzBuzz.convert("abc")
     
     def test_it_return_fizz_for_multiples_of_three(self) -> None:
         

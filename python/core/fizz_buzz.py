@@ -1,3 +1,5 @@
+from validations.common import validate_number
+
 class FizzBuzz:
     
     @staticmethod
@@ -5,12 +7,14 @@ class FizzBuzz:
         
         result = ''
         
+        validate_number(number)
+        
         if number % 3 == 0 :
             
             result += 'fizz'
-            
+        
         if number % 5 == 0 :
-            
+        
             result += 'buzz'
         
-        return result if result != '' else number
+        return result or number
