@@ -1,14 +1,14 @@
 import unittest
 
-from core.fizz_buzz import FizzBuzz
+from src.fizz_buzz import FizzBuzz
 
-from exceptions.value_not_number_error import ValueNotNumberError
+from src.exceptions.invalid_value_error import InvalidValueError
 
 class TestFizzBuzz(unittest.TestCase):
     
     def test_it_return_an_exception_if_the_parameter_is_not_a_number(self) -> None:
          
-        with self.assertRaises(ValueNotNumberError):
+        with self.assertRaises(InvalidValueError):
             
             FizzBuzz.convert("abc")
     
