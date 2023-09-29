@@ -1,4 +1,7 @@
-from validations.common import validate_number
+#from validations.validator import validate_number
+
+from src.validations.validator import validate_number
+
 
 class FizzBuzz:
     

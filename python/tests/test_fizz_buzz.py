@@ -1,8 +1,8 @@
 import unittest
 
-from core.fizz_buzz import FizzBuzz
+from src.fizz_buzz import FizzBuzz
 
-from exceptions.value_not_number_error import ValueNotNumberError
+from src.exceptions.value_not_number_error import ValueNotNumberError
 
 class TestFizzBuzz(unittest.TestCase):
     
