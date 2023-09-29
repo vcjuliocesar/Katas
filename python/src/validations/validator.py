@@ -1,7 +1,11 @@
-from src.exceptions.value_not_number_error import ValueNotNumberError 
+from src.exceptions.invalid_value_error import InvalidValueError
+
+class Validator: 
     
-def validate_number(number):
-    
-    if not isinstance(number,(int)):
-        raise ValueNotNumberError(f'{number} is not a valid number')
+    @staticmethod
+    def validate_number(number):
+        
+        if not isinstance(number,(int)):
+            
+            raise InvalidValueError(f'{number} is not a valid number')
     

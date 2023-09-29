@@ -1,6 +1,4 @@
-#from validations.validator import validate_number
-
-from src.validations.validator import validate_number
+from src.validations.validator import Validator
 
 
 class FizzBuzz:
@@ -10,7 +8,7 @@ class FizzBuzz:
         
         result = ''
         
-        validate_number(number)
+        Validator.validate_number(number)
         
         if number % 3 == 0 :
             
