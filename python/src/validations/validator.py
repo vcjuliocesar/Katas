@@ -9,3 +9,10 @@ class Validator:
             
             raise InvalidValueError(f'{number} is not a valid number')
     
+    @staticmethod   
+    def validate_empty_value(param):
+        
+        if not param or len(param) < 1:
+            
+            raise InvalidValueError("empty value")
+    
