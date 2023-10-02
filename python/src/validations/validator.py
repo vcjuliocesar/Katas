@@ -16,3 +16,18 @@ class Validator:
             
             raise InvalidValueError("empty value")
     
+    @staticmethod
+    def isValidList(lst,options):
+        
+        for item in lst:
+            
+            if item not in options:
+                
+                raise InvalidValueError(f"{item} is a valid option")
+        
+    @staticmethod
+    def isValidLength(lst):
+        
+        if len(lst) < 8 or len(lst) > 8 :
+            
+            raise InvalidValueError(f"{len(lst)} is an invalid length")
