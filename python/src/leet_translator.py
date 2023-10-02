@@ -1,7 +1,23 @@
 from src.validations.validator import Validator
 
 
-class Leet:
+class LeetTranslator:
+
+    @staticmethod
+    def convert(text: str):
+
+        result = ""
+
+        Validator.isEmpty(text)
+
+        for character in text:
+
+            result += Dictionary.find_in_dictionary(character).strip()
+
+        return result
+
+
+class Dictionary:
 
     DICTIONARY = {
         "alphabet": {
@@ -45,35 +61,22 @@ class Leet:
             0: "o",
         }
     }
-
+    
     @staticmethod
-    def convert(text: str):
-
-        result = ""
-
-        Validator.validate_empty_value(text)
-
-        for character in text:
-
-            result += Leet.__find_in_dictionary(character).strip()
-
-        return result
-
-    @staticmethod
-    def __find_in_dictionary(character: str):
+    def find_in_dictionary(character: str):
 
         if character.isdigit():
 
-            return Leet.__isNumber(character)
+            return Dictionary.__isNumber(character)
 
         if isinstance(character, str):
 
-            return Leet.__isString(character)
+            return Dictionary.__isString(character)
 
     @staticmethod
     def __isNumber(param: int):
 
-        numbers = Leet.DICTIONARY['numbers']
+        numbers = Dictionary.DICTIONARY['numbers']
 
         number = int(param)
 
@@ -84,7 +87,7 @@ class Leet:
     @staticmethod
     def __isString(param: str):
 
-        alphabet = Leet.DICTIONARY['alphabet']
+        alphabet = Dictionary.DICTIONARY['alphabet']
 
         uppercase = param.upper()
 
