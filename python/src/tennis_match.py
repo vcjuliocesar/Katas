@@ -14,6 +14,8 @@ class TennisMatch:
         self.p1_points = 0
 
         self.p2_points = 0
+        
+        self.finished = False
 
     def score(self):
 
@@ -27,19 +29,41 @@ class TennisMatch:
 
         for player in self.points:
 
-            self.p1_points += 1 if player == "P1" else 0
+            self.update_points(player)
 
-            self.p2_points += 1 if player == "P2" else 0
+            result += self.get_score()
 
-            if self.p1_points >= 3 and self.p2_points >= 3:
+        if self.finished:
+            
+            winner = f"Player P1 has won\n" if self.p1_points > self.p2_points else "Player P2 has won\n"
 
-                if abs(self.p1_points - self.p2_points) <= 1:
+            result += winner
 
-                    result += f"Deuce\n" if self.p1_points == self.p2_points else "Advantage P1\n" if self.p1_points > self.p2_points else "Advantage P2\n"
-
-            elif self.p1_points < 4 and self.p2_points < 4:
-
-                result += f"{self.scores[self.p1_points]} - {self.scores[self.p2_points]}\n"
-
-        result += f"Player P1 has won\n" if self.p1_points > self.p2_points else "Player P2 has won\n"
         return result
+
+    def update_points(self, player: str):
+
+        if player == "P1":
+            self.p1_points += 1
+        else:
+            self.p2_points += 1
+
+    def get_score(self):
+
+        if self.p1_points >= 3 and self.p2_points >= 3:
+
+            score_diff = abs(self.p1_points - self.p2_points)
+
+            if not self.finished and score_diff <= 1:
+
+                return f"Deuce\n" if self.p1_points == self.p2_points else "Advantage P1\n" if self.p1_points > self.p2_points else "Advantage P2\n"
+            
+            self.finished = True
+        
+        elif self.p1_points < 4 and self.p2_points < 4:
+
+            return f"{self.scores[self.p1_points]} - {self.scores[self.p2_points]}\n"
+
+        self.finished = True
+        
+        return ""
