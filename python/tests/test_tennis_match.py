@@ -29,7 +29,7 @@ class TestTennisMatch(unittest.TestCase):
             
             match.score()
     
-    def test_it_retuens_deuce(self) -> None:
+    def test_it_returns_deuce(self) -> None:
         
         score = "15 - Love\n30 - Love\n30 - 15\n30 - 30\n40 - 30\nDeuce\n"
         
@@ -37,7 +37,7 @@ class TestTennisMatch(unittest.TestCase):
         
         self.assertEqual(score,match.score());
         
-    def test_it_retuens_advantage(self) -> None:
+    def test_it_returns_advantage(self) -> None:
         
         score = "15 - Love\n30 - Love\n30 - 15\n30 - 30\n40 - 30\nDeuce\nAdvantage P1\n"
         
@@ -46,7 +46,7 @@ class TestTennisMatch(unittest.TestCase):
         self.assertEqual(score,match.score());
             
             
-    def test_it_retuens_score_game(self) -> None:
+    def test_it_returns_score_game(self) -> None:
         
         score = "15 - Love\n30 - Love\n30 - 15\n30 - 30\n40 - 30\nDeuce\nAdvantage P1\nPlayer P1 has won\n"
         
