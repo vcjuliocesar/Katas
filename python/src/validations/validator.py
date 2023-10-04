@@ -32,3 +32,17 @@ class Validator:
         if len(lst) <= 1:
 
             raise InvalidValueError(f"{len(lst)} is an invalid length")
+
+    @staticmethod
+    def max_length(param,length):
+        
+        if param > int(length):
+            
+            raise InvalidValueError(f"{param} is an invalid length")
+        
+    @staticmethod
+    def min_length(param,length):
+        
+        if param < int(length):
+            
+            raise InvalidValueError(f"{param} is an invalid length")
